@@ -19,36 +19,38 @@ class OnBoardingScreen extends StatelessWidget {
         builder: (context, state) {
           OnBoardingCubit cubit = OnBoardingCubit.get(context);
 
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  OnBoardingSlider(controller: cubit.carouselController, pageInfo: cubit.getPages()),
-                  SizedBox(height: 16),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 5),
-                    child: Text(
-                      cubit.getPages().first.heading,
-                      style: AppTextStyles.onBoardingHeadingTextStyle,
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  SizedBox(height: 5),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: Text(
-                      cubit.getPages().first.subHeading,
-                      style: AppTextStyles.textStyle15,
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  SizedBox(height: context.height*0.1),
-                  AppButton(onTap: (){
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // OnBoardingSlider(controller: cubit.carouselController, pageInfo: cubit.getPages()),
+              SizedBox(height: 16),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5),
+                child: Text(
+                  cubit.getPages().first.heading,
+                  style: AppTextStyles.onBoardingHeadingTextStyle,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              SizedBox(height: 5),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Text(
+                  cubit.getPages().first.subHeading,
+                  style: AppTextStyles.textStyle15,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              SizedBox(height: context.height * 0.1),
+              AppButton(
+                  onTap: () {
                     cubit.navigateToLoginOrHome(context: context);
-                  }, buttonText: 'on_boarding.get_started'.tr(context))
-                ],
-              );
-            },
+                  },
+                  buttonText: 'on_boarding.get_started'.tr(context))
+            ],
+          );
+        },
       ),
     );
   }

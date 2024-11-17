@@ -31,7 +31,7 @@ class HouseCleaningOrderScreen extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                height: 16.h,
+                height: context.height,
               ),
               ServiceTypeCard(
                   serviceType: 'cleaning.house_cleaning'.tr(context)),

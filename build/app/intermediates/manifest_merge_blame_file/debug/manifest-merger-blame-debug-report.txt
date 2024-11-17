@@ -1,0 +1,399 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.osta"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+9        android:targetSdkVersion="30" />
+10    <!--
+11         The INTERNET permission is required for development. Specifically,
+12         the Flutter tool needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:3:5-67
+15-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:3:22-64
+16    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+16-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:4:5-76
+16-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:4:22-73
+17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+17-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:5:5-79
+17-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:5:22-76
+18    <uses-permission
+18-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:6:5-80
+19        android:name="android.permission.READ_EXTERNAL_STORAGE"
+19-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:6:22-77
+20        android:maxSdkVersion="32" />
+20-->[:file_picker] /home/ali--salhab/Desktop/osta/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:9:9-35
+21    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+21-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:7:5-81
+21-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:7:22-78
+22    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Provide required visibility configuration for API level 30 and above -->
+22-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:8:5-78
+22-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:8:22-76
+23    <queries>
+23-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:11:5-26:15
+24
+25        <!-- If your app checks for SMS support -->
+26        <intent>
+26-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:13:9-16:18
+27            <action android:name="android.intent.action.VIEW" />
+27-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:14:13-65
+27-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:14:21-62
+28
+29            <data android:scheme="sms" />
+29-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:15:13-42
+29-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:15:19-39
+30        </intent>
+31        <!-- If your app checks for call support -->
+32        <intent>
+32-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:18:9-21:18
+33            <action android:name="android.intent.action.VIEW" />
+33-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:14:13-65
+33-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:14:21-62
+34
+35            <data android:scheme="tel" />
+35-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:15:13-42
+35-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:15:19-39
+36        </intent>
+37        <!-- If your application checks for inAppBrowserView launch mode support -->
+38        <intent>
+38-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:23:9-25:18
+39            <action android:name="android.support.customtabs.action.CustomTabsService" />
+39-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:24:13-90
+39-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:24:21-87
+40        </intent>
+41        <intent>
+41-->[:file_picker] /home/ali--salhab/Desktop/osta/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-16:18
+42            <action android:name="android.intent.action.GET_CONTENT" />
+42-->[:file_picker] /home/ali--salhab/Desktop/osta/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-72
+42-->[:file_picker] /home/ali--salhab/Desktop/osta/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:21-69
+43
+44            <data android:mimeType="*/*" />
+44-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:15:13-42
+45        </intent>
+46    </queries>
+47
+48    <permission
+48-->[androidx.core:core:1.10.1] /home/ali--salhab/.gradle/caches/transforms-3/30100d4d70f0e10e3adec07942ccbeab/transformed/core-1.10.1/AndroidManifest.xml:22:5-24:47
+49        android:name="com.example.osta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+49-->[androidx.core:core:1.10.1] /home/ali--salhab/.gradle/caches/transforms-3/30100d4d70f0e10e3adec07942ccbeab/transformed/core-1.10.1/AndroidManifest.xml:23:9-81
+50        android:protectionLevel="signature" />
+50-->[androidx.core:core:1.10.1] /home/ali--salhab/.gradle/caches/transforms-3/30100d4d70f0e10e3adec07942ccbeab/transformed/core-1.10.1/AndroidManifest.xml:24:9-44
+51
+52    <uses-permission android:name="com.example.osta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+52-->[androidx.core:core:1.10.1] /home/ali--salhab/.gradle/caches/transforms-3/30100d4d70f0e10e3adec07942ccbeab/transformed/core-1.10.1/AndroidManifest.xml:26:5-97
+52-->[androidx.core:core:1.10.1] /home/ali--salhab/.gradle/caches/transforms-3/30100d4d70f0e10e3adec07942ccbeab/transformed/core-1.10.1/AndroidManifest.xml:26:22-94
+53
+54    <application
+55        android:name="android.app.Application"
+56        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+56-->[androidx.core:core:1.10.1] /home/ali--salhab/.gradle/caches/transforms-3/30100d4d70f0e10e3adec07942ccbeab/transformed/core-1.10.1/AndroidManifest.xml:28:18-86
+57        android:debuggable="true"
+58        android:icon="@mipmap/launcher_icon"
+59        android:label="osta77" >
+60        <activity
+61            android:name="com.example.osta.MainActivity"
+62            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+63            android:exported="true"
+64            android:hardwareAccelerated="true"
+65            android:launchMode="singleTop"
+66            android:theme="@style/LaunchTheme"
+67            android:windowSoftInputMode="adjustResize" >
+68
+69            <!--
+70                 Specifies an Android theme to apply to this Activity as soon as
+71                 the Android process has started. This theme is visible to the user
+72                 while the Flutter UI initializes. After that, this theme continues
+73                 to determine the Window background behind the Flutter UI.
+74            -->
+75            <meta-data
+76                android:name="io.flutter.embedding.android.NormalTheme"
+77                android:resource="@style/NormalTheme" />
+78
+79            <intent-filter>
+80                <action android:name="android.intent.action.MAIN" />
+81
+82                <category android:name="android.intent.category.LAUNCHER" />
+83            </intent-filter>
+84        </activity>
+85        <!--
+86             Don't delete the meta-data below.
+87             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+88        -->
+89        <meta-data
+90            android:name="flutterEmbedding"
+91            android:value="2" />
+92
+93        <service
+93-->[:cloud_firestore] /home/ali--salhab/Desktop/osta/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-12:19
+94            android:name="com.google.firebase.components.ComponentDiscoveryService"
+94-->[:cloud_firestore] /home/ali--salhab/Desktop/osta/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:8:18-89
+95            android:directBootAware="true"
+95-->[com.google.firebase:firebase-common:20.3.3] /home/ali--salhab/.gradle/caches/transforms-3/504f44a4de77de5c2c114d148977396a/transformed/jetified-firebase-common-20.3.3/AndroidManifest.xml:34:13-43
+96            android:exported="false" >
+96-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:68:13-37
+97            <meta-data
+97-->[:cloud_firestore] /home/ali--salhab/Desktop/osta/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-11:85
+98                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+98-->[:cloud_firestore] /home/ali--salhab/Desktop/osta/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:10:17-134
+99                android:value="com.google.firebase.components.ComponentRegistrar" />
+99-->[:cloud_firestore] /home/ali--salhab/Desktop/osta/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:11:17-82
+100            <meta-data
+100-->[:firebase_auth] /home/ali--salhab/Desktop/osta/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-11:85
+101                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+101-->[:firebase_auth] /home/ali--salhab/Desktop/osta/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:10:17-124
+102                android:value="com.google.firebase.components.ComponentRegistrar" />
+102-->[:firebase_auth] /home/ali--salhab/Desktop/osta/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:11:17-82
+103            <meta-data
+103-->[:firebase_core] /home/ali--salhab/Desktop/osta/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-11:85
+104                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+104-->[:firebase_core] /home/ali--salhab/Desktop/osta/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:10:17-124
+105                android:value="com.google.firebase.components.ComponentRegistrar" />
+105-->[:firebase_core] /home/ali--salhab/Desktop/osta/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:11:17-82
+106            <meta-data
+106-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:69:13-71:85
+107                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+107-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:70:17-109
+108                android:value="com.google.firebase.components.ComponentRegistrar" />
+108-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:71:17-82
+109            <meta-data
+109-->[com.google.firebase:firebase-firestore:24.8.1] /home/ali--salhab/.gradle/caches/transforms-3/0a838299a0cc913a279ec09f0870fe05/transformed/jetified-firebase-firestore-24.8.1/AndroidManifest.xml:17:13-19:85
+110                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+110-->[com.google.firebase:firebase-firestore:24.8.1] /home/ali--salhab/.gradle/caches/transforms-3/0a838299a0cc913a279ec09f0870fe05/transformed/jetified-firebase-firestore-24.8.1/AndroidManifest.xml:18:17-111
+111                android:value="com.google.firebase.components.ComponentRegistrar" />
+111-->[com.google.firebase:firebase-firestore:24.8.1] /home/ali--salhab/.gradle/caches/transforms-3/0a838299a0cc913a279ec09f0870fe05/transformed/jetified-firebase-firestore-24.8.1/AndroidManifest.xml:19:17-82
+112        </service>
+113
+114        <provider
+114-->[:image_picker_android] /home/ali--salhab/Desktop/osta/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-16:20
+115            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+115-->[:image_picker_android] /home/ali--salhab/Desktop/osta/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-82
+116            android:authorities="com.example.osta.flutter.image_provider"
+116-->[:image_picker_android] /home/ali--salhab/Desktop/osta/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:13-74
+117            android:exported="false"
+117-->[:image_picker_android] /home/ali--salhab/Desktop/osta/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-37
+118            android:grantUriPermissions="true" >
+118-->[:image_picker_android] /home/ali--salhab/Desktop/osta/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-47
+119            <meta-data
+119-->[:image_picker_android] /home/ali--salhab/Desktop/osta/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-15:75
+120                android:name="android.support.FILE_PROVIDER_PATHS"
+120-->[:image_picker_android] /home/ali--salhab/Desktop/osta/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:17-67
+121                android:resource="@xml/flutter_image_picker_file_paths" />
+121-->[:image_picker_android] /home/ali--salhab/Desktop/osta/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:17-72
+122        </provider>
+123
+124        <activity
+124-->[:url_launcher_android] /home/ali--salhab/Desktop/osta/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-11:74
+125            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+125-->[:url_launcher_android] /home/ali--salhab/Desktop/osta/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-74
+126            android:exported="false"
+126-->[:url_launcher_android] /home/ali--salhab/Desktop/osta/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:13-37
+127            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+127-->[:url_launcher_android] /home/ali--salhab/Desktop/osta/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-71
+128        <!--
+129           Declares a provider which allows us to store files to share in
+130           '.../caches/share_plus' and grant the receiving action access
+131        -->
+132        <provider
+132-->[:share_plus] /home/ali--salhab/Desktop/osta/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:13:9-21:20
+133            android:name="dev.fluttercommunity.plus.share.ShareFileProvider"
+133-->[:share_plus] /home/ali--salhab/Desktop/osta/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-77
+134            android:authorities="com.example.osta.flutter.share_provider"
+134-->[:share_plus] /home/ali--salhab/Desktop/osta/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-74
+135            android:exported="false"
+135-->[:share_plus] /home/ali--salhab/Desktop/osta/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-37
+136            android:grantUriPermissions="true" >
+136-->[:share_plus] /home/ali--salhab/Desktop/osta/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-47
+137            <meta-data
+137-->[:image_picker_android] /home/ali--salhab/Desktop/osta/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-15:75
+138                android:name="android.support.FILE_PROVIDER_PATHS"
+138-->[:image_picker_android] /home/ali--salhab/Desktop/osta/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:17-67
+139                android:resource="@xml/flutter_share_file_paths" />
+139-->[:image_picker_android] /home/ali--salhab/Desktop/osta/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:17-72
+140        </provider>
+141        <!--
+142           This manifest declared broadcast receiver allows us to use an explicit
+143           Intent when creating a PendingItent to be informed of the user's choice
+144        -->
+145        <receiver
+145-->[:share_plus] /home/ali--salhab/Desktop/osta/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:26:9-32:20
+146            android:name="dev.fluttercommunity.plus.share.SharePlusPendingIntent"
+146-->[:share_plus] /home/ali--salhab/Desktop/osta/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-82
+147            android:exported="false" >
+147-->[:share_plus] /home/ali--salhab/Desktop/osta/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:28:13-37
+148            <intent-filter>
+148-->[:share_plus] /home/ali--salhab/Desktop/osta/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-31:29
+149                <action android:name="EXTRA_CHOSEN_COMPONENT" />
+149-->[:share_plus] /home/ali--salhab/Desktop/osta/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:30:17-65
+149-->[:share_plus] /home/ali--salhab/Desktop/osta/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:30:25-62
+150            </intent-filter>
+151        </receiver>
+152
+153        <activity
+153-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:29:9-46:20
+154            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+154-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:30:13-80
+155            android:excludeFromRecents="true"
+155-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:31:13-46
+156            android:exported="true"
+156-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:32:13-36
+157            android:launchMode="singleTask"
+157-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:33:13-44
+158            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+158-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:34:13-72
+159            <intent-filter>
+159-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:35:13-45:29
+160                <action android:name="android.intent.action.VIEW" />
+160-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:14:13-65
+160-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:14:21-62
+161
+162                <category android:name="android.intent.category.DEFAULT" />
+162-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:38:17-76
+162-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:38:27-73
+163                <category android:name="android.intent.category.BROWSABLE" />
+163-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:39:17-78
+163-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:39:27-75
+164
+165                <data
+165-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:15:13-42
+166                    android:host="firebase.auth"
+167                    android:path="/"
+168                    android:scheme="genericidp" />
+168-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:15:19-39
+169            </intent-filter>
+170        </activity>
+171        <activity
+171-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:47:9-64:20
+172            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+172-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:48:13-79
+173            android:excludeFromRecents="true"
+173-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:49:13-46
+174            android:exported="true"
+174-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:50:13-36
+175            android:launchMode="singleTask"
+175-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:51:13-44
+176            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+176-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:52:13-72
+177            <intent-filter>
+177-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:53:13-63:29
+178                <action android:name="android.intent.action.VIEW" />
+178-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:14:13-65
+178-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:14:21-62
+179
+180                <category android:name="android.intent.category.DEFAULT" />
+180-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:38:17-76
+180-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:38:27-73
+181                <category android:name="android.intent.category.BROWSABLE" />
+181-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:39:17-78
+181-->[com.google.firebase:firebase-auth:22.1.2] /home/ali--salhab/.gradle/caches/transforms-3/5d044a35f69daa81dfe69b1e9e111885/transformed/jetified-firebase-auth-22.1.2/AndroidManifest.xml:39:27-75
+182
+183                <data
+183-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:15:13-42
+184                    android:host="firebase.auth"
+185                    android:path="/"
+186                    android:scheme="recaptcha" />
+186-->/home/ali--salhab/Desktop/osta/android/app/src/main/AndroidManifest.xml:15:19-39
+187            </intent-filter>
+188        </activity>
+189
+190        <provider
+190-->[com.google.firebase:firebase-common:20.3.3] /home/ali--salhab/.gradle/caches/transforms-3/504f44a4de77de5c2c114d148977396a/transformed/jetified-firebase-common-20.3.3/AndroidManifest.xml:25:9-30:39
+191            android:name="com.google.firebase.provider.FirebaseInitProvider"
+191-->[com.google.firebase:firebase-common:20.3.3] /home/ali--salhab/.gradle/caches/transforms-3/504f44a4de77de5c2c114d148977396a/transformed/jetified-firebase-common-20.3.3/AndroidManifest.xml:26:13-77
+192            android:authorities="com.example.osta.firebaseinitprovider"
+192-->[com.google.firebase:firebase-common:20.3.3] /home/ali--salhab/.gradle/caches/transforms-3/504f44a4de77de5c2c114d148977396a/transformed/jetified-firebase-common-20.3.3/AndroidManifest.xml:27:13-72
+193            android:directBootAware="true"
+193-->[com.google.firebase:firebase-common:20.3.3] /home/ali--salhab/.gradle/caches/transforms-3/504f44a4de77de5c2c114d148977396a/transformed/jetified-firebase-common-20.3.3/AndroidManifest.xml:28:13-43
+194            android:exported="false"
+194-->[com.google.firebase:firebase-common:20.3.3] /home/ali--salhab/.gradle/caches/transforms-3/504f44a4de77de5c2c114d148977396a/transformed/jetified-firebase-common-20.3.3/AndroidManifest.xml:29:13-37
+195            android:initOrder="100" />
+195-->[com.google.firebase:firebase-common:20.3.3] /home/ali--salhab/.gradle/caches/transforms-3/504f44a4de77de5c2c114d148977396a/transformed/jetified-firebase-common-20.3.3/AndroidManifest.xml:30:13-36
+196
+197        <activity
+197-->[com.google.android.gms:play-services-base:18.0.1] /home/ali--salhab/.gradle/caches/transforms-3/a7ef80dd7f5b3ae40a1b073b1bc954ca/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+198            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+198-->[com.google.android.gms:play-services-base:18.0.1] /home/ali--salhab/.gradle/caches/transforms-3/a7ef80dd7f5b3ae40a1b073b1bc954ca/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+199            android:exported="false"
+199-->[com.google.android.gms:play-services-base:18.0.1] /home/ali--salhab/.gradle/caches/transforms-3/a7ef80dd7f5b3ae40a1b073b1bc954ca/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+200            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+200-->[com.google.android.gms:play-services-base:18.0.1] /home/ali--salhab/.gradle/caches/transforms-3/a7ef80dd7f5b3ae40a1b073b1bc954ca/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+201
+202        <meta-data
+202-->[com.google.android.gms:play-services-basement:18.1.0] /home/ali--salhab/.gradle/caches/transforms-3/4f3f9f844c70319966006a6f14facb0a/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+203            android:name="com.google.android.gms.version"
+203-->[com.google.android.gms:play-services-basement:18.1.0] /home/ali--salhab/.gradle/caches/transforms-3/4f3f9f844c70319966006a6f14facb0a/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+204            android:value="@integer/google_play_services_version" />
+204-->[com.google.android.gms:play-services-basement:18.1.0] /home/ali--salhab/.gradle/caches/transforms-3/4f3f9f844c70319966006a6f14facb0a/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+205
+206        <uses-library
+206-->[androidx.window:window:1.0.0-beta04] /home/ali--salhab/.gradle/caches/transforms-3/d53a28d5d3224e7c95162ebe23180537/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+207            android:name="androidx.window.extensions"
+207-->[androidx.window:window:1.0.0-beta04] /home/ali--salhab/.gradle/caches/transforms-3/d53a28d5d3224e7c95162ebe23180537/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+208            android:required="false" />
+208-->[androidx.window:window:1.0.0-beta04] /home/ali--salhab/.gradle/caches/transforms-3/d53a28d5d3224e7c95162ebe23180537/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+209        <uses-library
+209-->[androidx.window:window:1.0.0-beta04] /home/ali--salhab/.gradle/caches/transforms-3/d53a28d5d3224e7c95162ebe23180537/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+210            android:name="androidx.window.sidecar"
+210-->[androidx.window:window:1.0.0-beta04] /home/ali--salhab/.gradle/caches/transforms-3/d53a28d5d3224e7c95162ebe23180537/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+211            android:required="false" />
+211-->[androidx.window:window:1.0.0-beta04] /home/ali--salhab/.gradle/caches/transforms-3/d53a28d5d3224e7c95162ebe23180537/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+212
+213        <provider
+213-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+214            android:name="androidx.startup.InitializationProvider"
+214-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:25:13-67
+215            android:authorities="com.example.osta.androidx-startup"
+215-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:26:13-68
+216            android:exported="false" >
+216-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:27:13-37
+217            <meta-data
+217-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+218                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+218-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+219                android:value="androidx.startup" />
+219-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+220        </provider>
+221
+222        <receiver
+222-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+223            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+223-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+224            android:directBootAware="false"
+224-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+225            android:enabled="true"
+225-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+226            android:exported="true"
+226-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+227            android:permission="android.permission.DUMP" >
+227-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+228            <intent-filter>
+228-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+229                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+229-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+229-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+230            </intent-filter>
+231            <intent-filter>
+231-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+232                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+232-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+232-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+233            </intent-filter>
+234            <intent-filter>
+234-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+235                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+235-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+235-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+236            </intent-filter>
+237            <intent-filter>
+237-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+238                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+238-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+238-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/ali--salhab/.gradle/caches/transforms-3/02aa237071cc2ea908143a3415ca8c20/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+239            </intent-filter>
+240        </receiver>
+241    </application>
+242
+243</manifest>

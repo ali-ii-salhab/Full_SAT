@@ -91,6 +91,7 @@ class _ProfileConfigScreenState extends State<ProfileConfigScreen> {
                 builder: (context) => const LoadingDialog(),
               );
             } else if (state is EditUserInfoErrorState) {
+              // context.navigateTo(routeName: AppColors())
               context.getBack();
               showAdaptiveDialog<Widget>(
                 context: context,
@@ -211,9 +212,8 @@ class _ProfileConfigScreenState extends State<ProfileConfigScreen> {
                     height: 16.h,
                   ),
                   AppTextField(
-                    controller: nameController..text = widget.user.name ?? '' ,
+                    controller: nameController..text = widget.user.name ?? '',
                     hintText: 'user name',
-
                   ),
                   SizedBox(
                     height: 32.h,
@@ -227,7 +227,7 @@ class _ProfileConfigScreenState extends State<ProfileConfigScreen> {
                   ),
                   AppTextField(
                     inputType: TextInputType.emailAddress,
-                    controller: emailController..text=widget.user.email ?? '',
+                    controller: emailController..text = widget.user.email ?? '',
                     hintText: 'test@example.com',
                   ),
                   SizedBox(
@@ -270,31 +270,53 @@ class _ProfileConfigScreenState extends State<ProfileConfigScreen> {
                                 });
                               },
                             ),
-                            SizedBox(height: 16.h,),
-                         selectedAddress != null &&
-                             context.read<LocationCubit>().maiAddresses.firstWhere((element) => element.addressId == selectedAddress).regions !=null
-                    &&
-                             context.read<LocationCubit>().maiAddresses.firstWhere((element) => element.addressId == selectedAddress).regions.isNotEmpty
-                         ?  AppDropDown(
-                              value: selectedRegion,
-                              items: [],
-                              customItems:
-                                  //   state.mainAddresses!
-                      // context.read<LocationCubit>()
-                      //     .maiAddresses.elementAt(
-                      context.read<LocationCubit>().maiAddresses.firstWhere((element) => element.addressId == selectedAddress).regions
-                      .map((item) {
-                                return DropdownMenuItem(
-                                  value: item.regionId,
-                                  child: Text(item.regionName),
-                                );
-                              }).toList(),
-                              onChanged: (value) {
-                                setState(() {
-                                  selectedRegion = value!;
-                                });
-                              },
-                            ): SizedBox(),
+                            SizedBox(
+                              height: 16.h,
+                            ),
+                            selectedAddress != null &&
+                                    context
+                                            .read<LocationCubit>()
+                                            .maiAddresses
+                                            .firstWhere((element) =>
+                                                element.addressId ==
+                                                selectedAddress)
+                                            .regions !=
+                                        null &&
+                                    context
+                                        .read<LocationCubit>()
+                                        .maiAddresses
+                                        .firstWhere((element) =>
+                                            element.addressId ==
+                                            selectedAddress)
+                                        .regions
+                                        .isNotEmpty
+                                ? AppDropDown(
+                                    value: selectedRegion,
+                                    items: [],
+                                    customItems:
+                                        //   state.mainAddresses!
+                                        // context.read<LocationCubit>()
+                                        //     .maiAddresses.elementAt(
+                                        context
+                                            .read<LocationCubit>()
+                                            .maiAddresses
+                                            .firstWhere((element) =>
+                                                element.addressId ==
+                                                selectedAddress)
+                                            .regions
+                                            .map((item) {
+                                      return DropdownMenuItem(
+                                        value: item.regionId,
+                                        child: Text(item.regionName),
+                                      );
+                                    }).toList(),
+                                    onChanged: (value) {
+                                      setState(() {
+                                        selectedRegion = value!;
+                                      });
+                                    },
+                                  )
+                                : SizedBox(),
                           ],
                         );
                       else

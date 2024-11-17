@@ -9,7 +9,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:osta/core/appkeys/app_keys.dart';
 import 'package:osta/core/constants/app_strings.dart';
 import 'package:osta/core/localization/app_localizations.dart';
-import 'package:osta/core/localization/language_cache_helper.dart';
 import 'package:osta/core/localization/locale_cubit/locale_cubit.dart';
 import 'package:osta/core/localization/locale_cubit/locale_state.dart';
 import 'package:osta/core/themes/app_theme.dart';
@@ -40,9 +39,8 @@ import 'core/helpers/cache_helper.dart';
 import 'logic/debug/app_bloc_observer.dart';
 import 'presentation/router/app_router.dart';
 
-
 String t = "";
-
+// no thing just check connection
 Future<bool> checkUserConnection() async {
   try {
     final result = await InternetAddress.lookup('google.com');
@@ -57,41 +55,33 @@ Future<bool> checkUserConnection() async {
   return false;
 }
 
-
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   // WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await CacheHelper.initSharedPref();
-  DioHelper.init(token: CacheHelper.getStringData(key:'userToken') ??'');
+  DioHelper.init(token: CacheHelper.getStringData(key: 'userToken') ?? '');
   Bloc.observer = AppBlocObserver();
   // CacheHelper.getIntData(key: 'userId');
-  runApp(
-      MultiBlocProvider(providers: [
-        BlocProvider(create: (_) => AuthCubit()),
-        BlocProvider(create: (_) =>
-        ThemeBloc()
-          ..add(GetCurrentThemeEvent())),
-        BlocProvider(create: (_) => LocaleCubit()..initLanguages()),
-        BlocProvider(create: (_) => NavigationCubit()),
-        BlocProvider(create: (_) => ProfileCubit()..getSavedUserInfoInSP()),
-        BlocProvider(create: (_) => SectionsCubit()),
-        BlocProvider(create: (_) => AllWorkersCubit()),
-        BlocProvider(create: (_) => JoinUsCubit()),
-        BlocProvider(create: (_) => WorkerApplicationCubit()),
-        BlocProvider(create: (_) => LocationCubit()..getAddresses()),
-        BlocProvider(create: (_) => MainCubit()),
-        BlocProvider(create: (_) => AllWorkersBloc()),
-        BlocProvider(create: (_) => AllStoresBloc()),
-        BlocProvider(create: (_) => StoreProductsBloc()),
-        BlocProvider(create: (_) => MainStoreCubit()),
-        BlocProvider(create: (_) => RequestsCubit()),
-
-      ],
-          child: App()));
+  runApp(MultiBlocProvider(providers: [
+    BlocProvider(create: (_) => AuthCubit()),
+    BlocProvider(create: (_) => ThemeBloc()..add(GetCurrentThemeEvent())),
+    BlocProvider(create: (_) => LocaleCubit()..initLanguages()),
+    BlocProvider(create: (_) => NavigationCubit()),
+    BlocProvider(create: (_) => ProfileCubit()..getSavedUserInfoInSP()),
+    BlocProvider(create: (_) => SectionsCubit()),
+    BlocProvider(create: (_) => AllWorkersCubit()),
+    BlocProvider(create: (_) => JoinUsCubit()),
+    BlocProvider(create: (_) => WorkerApplicationCubit()),
+    BlocProvider(create: (_) => LocationCubit()..getAddresses()),
+    BlocProvider(create: (_) => MainCubit()),
+    BlocProvider(create: (_) => AllWorkersBloc()),
+    BlocProvider(create: (_) => AllStoresBloc()),
+    BlocProvider(create: (_) => StoreProductsBloc()),
+    BlocProvider(create: (_) => MainStoreCubit()),
+    BlocProvider(create: (_) => RequestsCubit()),
+  ], child: App()));
 }
 
 class App extends StatelessWidget {
@@ -99,53 +89,59 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<LocaleCubit, ChangeLocaleState>(
       builder: (context, localeState) {
-          return BlocBuilder<ThemeBloc, ThemeState>(
-            builder: (context, themeState) {
-              if (themeState is LoadedThemeState) {
-                return ScreenUtilInit(
-                  designSize: const Size(428, 926),
-                  minTextAdapt: true,
-                  splitScreenMode: true,
-                  builder:(context,_)=> MaterialApp(
-                    navigatorKey: AppKeys.navigatorKey,
-                    locale: localeState.locale,
-                    supportedLocales:
-                    context.read<LocaleCubit>().supportedLanguages.isNotEmpty ? context.read<LocaleCubit>().supportedLanguages.map((element) { return Locale(element.languageKey);}).toList():[
-                      Locale('en'),
-                      Locale('ar'),
-                    ],
-                    // localeState.languages.map((element) { return Locale(element.languageKey);}).toList(),
-                     // localeState.languages.map((element) { return Locale(element.languageKey);}).toList().length !=0 :
-                     // Iterable<Locale>   [Locale('en'),Locale('ar')],
-                    localizationsDelegates: const [
-                      AppLocalizations.delegate,
-                      GlobalMaterialLocalizations.delegate,
-                      GlobalWidgetsLocalizations.delegate,
-                      GlobalCupertinoLocalizations.delegate
-                    ],
-                    localeResolutionCallback: (deviceLocale, supportedLocales) {
-                      for (var locale in supportedLocales) {
-                        if (deviceLocale != null &&
-                            deviceLocale.languageCode == locale.languageCode) {
-                          return deviceLocale;
-                        }
+        return BlocBuilder<ThemeBloc, ThemeState>(
+          builder: (context, themeState) {
+            if (themeState is LoadedThemeState) {
+              return ScreenUtilInit(
+                designSize: const Size(428, 926),
+                minTextAdapt: true,
+                splitScreenMode: true,
+                builder: (context, _) => MaterialApp(
+                  navigatorKey: AppKeys.navigatorKey,
+                  locale: localeState.locale,
+                  supportedLocales:
+                      context.read<LocaleCubit>().supportedLanguages.isNotEmpty
+                          ? context
+                              .read<LocaleCubit>()
+                              .supportedLanguages
+                              .map((element) {
+                              return Locale(element.languageKey);
+                            }).toList()
+                          : [
+                              Locale('en'),
+                              Locale('ar'),
+                            ],
+                  // localeState.languages.map((element) { return Locale(element.languageKey);}).toList(),
+                  // localeState.languages.map((element) { return Locale(element.languageKey);}).toList().length !=0 :
+                  // Iterable<Locale>   [Locale('en'),Locale('ar')],
+                  localizationsDelegates: const [
+                    AppLocalizations.delegate,
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate
+                  ],
+                  localeResolutionCallback: (deviceLocale, supportedLocales) {
+                    for (var locale in supportedLocales) {
+                      if (deviceLocale != null &&
+                          deviceLocale.languageCode == locale.languageCode) {
+                        return deviceLocale;
                       }
-                      return supportedLocales.first;
-                    },
-                    title: AppStrings.appTitle,
-                    theme: appThemeData[AppTheme.lightTheme],
-                    // themeState.themeData,
-                    // darkTheme: appThemeData[AppTheme.darkTheme],
-                    // themeMode: ThemeMode.system,
-                    debugShowCheckedModeBanner: false,
-                    onGenerateRoute: AppRoutes.onGenerateRoute,
-
-                  ),
-                );
-              }
-              return Container();
-            },
-          );
+                    }
+                    return supportedLocales.first;
+                  },
+                  title: AppStrings.appTitle,
+                  theme: appThemeData[AppTheme.lightTheme],
+                  // themeState.themeData,
+                  // darkTheme: appThemeData[AppTheme.darkTheme],
+                  // themeMode: ThemeMode.system,
+                  debugShowCheckedModeBanner: false,
+                  onGenerateRoute: AppRoutes.onGenerateRoute,
+                ),
+              );
+            }
+            return Container();
+          },
+        );
       },
     );
   }

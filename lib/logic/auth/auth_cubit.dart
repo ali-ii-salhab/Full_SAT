@@ -1,4 +1,3 @@
-
 import 'dart:async';
 import 'dart:io';
 
@@ -16,8 +15,8 @@ import '../../data/repositories/auth_repository.dart';
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitialState());
 
-  static AuthCubit get(BuildContext context) => BlocProvider.of<AuthCubit>(context);
-
+  static AuthCubit get(BuildContext context) =>
+      BlocProvider.of<AuthCubit>(context);
   AuthRepository authRepository = AuthRepository();
 
   TextEditingController phoneController = TextEditingController();
@@ -36,7 +35,7 @@ class AuthCubit extends Cubit<AuthState> {
   void sendOTP(String phoneNumber) async {
     emit(AuthLoadingState());
     try {
-      print(phoneNumber);
+      // print(phoneNumber);
       await authRepository.sendOtp(
           phoneNumber: phoneNumber,
           phoneVerificationFailed: (FirebaseAuthException e) {
@@ -44,8 +43,8 @@ class AuthCubit extends Cubit<AuthState> {
             emit(AuthErrorState(errorMsg: e.message.toString()));
           },
           phoneVerificationCompleted: (PhoneAuthCredential credential) {
-          //   signInWithPhone(credential);
-          //   emit(AuthenticatedState(user: user))
+            //   signInWithPhone(credential);
+            //   emit(AuthenticatedState(user: user))
           },
           phoneCodeSent: (String verificationId, int? refreshToken) {
             // print(verificationId);
@@ -61,31 +60,30 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   void verifyOTP(String otp) async {
-  emit(AuthLoadingState());
-  // await authRepository.verifyAndLogin(verificationID!,otp);
-  PhoneAuthCredential credential = PhoneAuthProvider.credential(
-  verificationId: verificationID!, smsCode: otp);
-  await signInWithPhone(credential);
+    emit(AuthLoadingState());
+    // await authRepository.verifyAndLogin(verificationID!,otp);
+    PhoneAuthCredential credential = PhoneAuthProvider.credential(
+        verificationId: verificationID!, smsCode: otp);
+    await signInWithPhone(credential);
   }
 
   Future<void> signInWithPhone(AuthCredential credential) async {
-
-    try{
-      UserCredential userCredential = await authRepository.signInWithPhone(credential);
+    try {
+      UserCredential userCredential =
+          await authRepository.signInWithPhone(credential);
       // if (userCredential.user == null) return ;
-      if(userCredential.user != null){
+      if (userCredential.user != null) {
         // userCredential.additionalUserInfo?.isNewUser;
-       await userCredential.user!.getIdToken().then((value) async{
-         print('token iss : $value');
-         await registerUser(value);
-       } );
-  }
-    }on FirebaseAuthException catch (ex) {
+        await userCredential.user!.getIdToken().then((value) async {
+          print('token iss : $value');
+          await registerUser(value);
+        });
+      }
+    } on FirebaseAuthException catch (ex) {
       // await setTokenInSP("", "");
-  emit(AuthErrorState(errorMsg: ex.message.toString()));
-  }
-  catch(e){
-    // await setTokenInSP("", "");
+      emit(AuthErrorState(errorMsg: ex.message.toString()));
+    } catch (e) {
+      // await setTokenInSP("", "");
       emit(AuthErrorState(errorMsg: e.toString()));
     }
   }
@@ -118,9 +116,9 @@ class AuthCubit extends Cubit<AuthState> {
   //   }
   // }
 
-   String? deviceToken = '';
+  String? deviceToken = '';
 
-  Future<void> deviceDetails() async{
+  Future<void> deviceDetails() async {
     emit(AuthLoadingState());
     final DeviceInfoPlugin deviceInfoPlugin = new DeviceInfoPlugin();
     try {
@@ -138,34 +136,36 @@ class AuthCubit extends Cubit<AuthState> {
       emit(GetDeviceInfoSuccessState(deviceTok: deviceToken ?? ''));
     } on PlatformException {
       print('Failed to get platform version');
-      emit(GetDeviceInfoErrorState(errorMsg:'Failed to get platform version'));
+      emit(GetDeviceInfoErrorState(errorMsg: 'Failed to get platform version'));
     }
   }
 
-
-  Future<void> registerUser(String? firebaseToken,) async{
+  Future<void> registerUser(
+    String? firebaseToken,
+  ) async {
     emit(AuthLoadingState());
     // try{
-      await authRepository.registerUser(tok: firebaseToken,deviceToken: deviceToken ).then((value) async{
-        ///put in sp
-        value.fold((l) {
-          print(l.errorMessage);
-          CacheHelper.saveData(key: 'userToken', value: '');
-          CacheHelper.saveData(key: 'userId', value: 0);
-          emit(AuthErrorState(errorMsg: l.errorMessage ?? ''));
-        },
-                (r) {
-                  CacheHelper.saveData(key: 'userToken', value: r.token);
-                  CacheHelper.saveData(key: 'userId', value: r.userData.userId);
-                  DioHelper.init(token: r.token);
-                  emit(AuthenticatedState(user:r.userData));
-                } );
+    await authRepository
+        .registerUser(tok: firebaseToken, deviceToken: deviceToken)
+        .then((value) async {
+      ///put in sp
+      value.fold((l) {
+        print(l.errorMessage);
+        CacheHelper.saveData(key: 'userToken', value: '');
+        CacheHelper.saveData(key: 'userId', value: 0);
+        emit(AuthErrorState(errorMsg: l.errorMessage ?? ''));
+      }, (r) {
+        CacheHelper.saveData(key: 'userToken', value: r.token);
+        CacheHelper.saveData(key: 'userId', value: r.userData.userId);
+        DioHelper.init(token: r.token);
+        emit(AuthenticatedState(user: r.userData));
       });
+    });
     // }catch(e){
     //   print(e);
     //   CacheHelper.saveData(key: 'userToken', value: '');
     //   CacheHelper.saveData(key: 'userId', value:'');
-      // emit(AuthErrorState(errorMsg: e.toString()));
+    // emit(AuthErrorState(errorMsg: e.toString()));
     // }
   }
 
@@ -185,55 +185,50 @@ class AuthCubit extends Cubit<AuthState> {
   //   emit(AuthRefereshUIState());
   // }
 
-
   Future<void> logOut() async {
-  emit(AuthLoadingState());
-  await authRepository.signout().then((value) {
-    value.fold((l) {
-      print(l.errorMessage);
-      emit(AuthErrorState(errorMsg: l.errorMessage ?? ''));
-    },
-            (r) {
-          CacheHelper.removeData(key: 'userToken');
-          // .saveData(key: 'userToken', value: '');
-          CacheHelper.removeData(key: 'userId');
-          // DioHelper.init(token: '');
-          emit(UnAuthenticatedState());
-        } );
-  });
+    emit(AuthLoadingState());
+    await authRepository.signout().then((value) {
+      value.fold((l) {
+        print(l.errorMessage);
+        emit(AuthErrorState(errorMsg: l.errorMessage ?? ''));
+      }, (r) {
+        CacheHelper.removeData(key: 'userToken');
+        // .saveData(key: 'userToken', value: '');
+        CacheHelper.removeData(key: 'userId');
+        // DioHelper.init(token: '');
+        emit(UnAuthenticatedState());
+      });
+    });
   }
 
-
-  void checkOtpEntered(String enteredCode){
+  void checkOtpEntered(String enteredCode) {
     print(enteredCode);
     debugPrint(verificationID);
     if (enteredCode.isEmpty) {
       emit(CodeEnteredEmptyState());
-  } else if (enteredCode.length < 6) {
+    } else if (enteredCode.length < 6) {
       emit(CodeEnteredShortState());
-  }
-    else {
+    } else {
       verifyOTP(enteredCode);
       // emit
 
-    // if (authProvider.needRegister == true) {
-    //   Navigator.pushAndRemoveUntil(
-    //     context,
-    //     MaterialPageRoute(
-    //         builder: (context) =>
-    //             ProfileConfig()),
-    //         (route) => false,
-    //   );
-    // } else {
-    //   Navigator.pushReplacement(
-    //     context,
-    //     MaterialPageRoute(
-    //         builder: (context) =>
-    //             HomePage()),
-    //   );
-    //   authProvider.notif();
-    // }
+      // if (authProvider.needRegister == true) {
+      //   Navigator.pushAndRemoveUntil(
+      //     context,
+      //     MaterialPageRoute(
+      //         builder: (context) =>
+      //             ProfileConfig()),
+      //         (route) => false,
+      //   );
+      // } else {
+      //   Navigator.pushReplacement(
+      //     context,
+      //     MaterialPageRoute(
+      //         builder: (context) =>
+      //             HomePage()),
+      //   );
+      //   authProvider.notif();
+      // }
+    }
   }
-  }
-
 }

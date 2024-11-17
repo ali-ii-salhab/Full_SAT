@@ -13,6 +13,7 @@ import 'package:osta/presentation/components/app_button.dart';
 import 'package:osta/presentation/components/app_logo_container.dart';
 import 'package:osta/presentation/components/app_text_field.dart';
 import 'package:osta/presentation/components/join_application_components/label_text.dart';
+import 'package:osta/presentation/router/app_router.dart';
 import 'package:osta/presentation/router/routes.dart';
 
 import '../../../logic/auth/auth_cubit.dart';
@@ -27,23 +28,22 @@ class RegisterNumberScreen extends StatelessWidget {
     // TextEditingController phoneController = TextEditingController();
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) async {
-        if(state is AuthCodeSentState){
+        if (state is AuthCodeSentState) {
           context.getBack();
-          context.navigateTo(routeName: Routes.verifyOtpViewRoute,arguments:context.read<AuthCubit>().phoneController.text);
-        }
-       else if(state is AuthLoadingState){
+          context.navigateTo(
+              routeName: Routes.verifyOtpViewRoute,
+              arguments: context.read<AuthCubit>().phoneController.text);
+        } else if (state is AuthLoadingState) {
           showAdaptiveDialog<Widget>(
             context: context,
             barrierDismissible: false,
-
             builder: (context) => const LoadingDialog(),
           );
-        }
-        else if (state is AuthErrorState) {
+        } else if (state is AuthErrorState) {
           context.getBack();
           showAdaptiveDialog<Widget>(
             context: context,
-            builder: (context) =>  ErrorDialog(errorText: state.errorMsg),
+            builder: (context) => ErrorDialog(errorText: state.errorMsg),
           );
         }
       },
@@ -57,16 +57,21 @@ class RegisterNumberScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 80.h,),
+                SizedBox(
+                  height: 80.h,
+                ),
                 AppLogoContainer(),
-               SizedBox(height: 80.h,),
+                SizedBox(
+                  height: 80.h,
+                ),
                 LabelText(
-labelText:                   'sign_in.enter_your_number'.tr(context),
+                  labelText: 'sign_in.enter_your_number'.tr(context),
                   // style: AppTextStyles.labelTextStyle,
                   // textAlign: TextAlign.start,
-
                 ),
-                SizedBox(height: 16.h,),
+                SizedBox(
+                  height: 16.h,
+                ),
                 AppTextField(
                   controller: context.read<AuthCubit>().phoneController,
                   inputType: TextInputType.phone,
@@ -74,7 +79,8 @@ labelText:                   'sign_in.enter_your_number'.tr(context),
                     value = context.read<AuthCubit>().phoneController.text;
                     print(value);
                     if (value == '' || value == null) {
-                      return 'sign_in.please_enter_your_phone_number'.tr(context);
+                      return 'sign_in.please_enter_your_phone_number'
+                          .tr(context);
                     }
                     if (value.length < 12) {
                       return 'sign_in.please_enter_valid_number'.tr(context);
@@ -83,23 +89,33 @@ labelText:                   'sign_in.enter_your_number'.tr(context),
                   },
                   hintText: '+964**********',
                 ),
-                SizedBox(height: 32.h,),
+                SizedBox(
+                  height: 32.h,
+                ),
                 AppButton(
                     onTap: () async {
+                      // Navigator.of(context).pushNamed();
+                      // here we make validation 
+                      // here
                       if (AuthKeys.loginFormKey.currentState!.validate()) {
-                        await context.read<AuthCubit>().deviceDetails().then((value) =>
-                        context.read<AuthCubit>().sendOTP(context.read<AuthCubit>().phoneController.text)
-                        );
+
+
+                        await context.read<AuthCubit>().deviceDetails().then(
+                            (value) => context.read<AuthCubit>().sendOTP(context
+                                .read<AuthCubit>()
+                                .phoneController
+                                .text));
                         // context.read<AuthCubit>().getTimerToResend();
 
                         // context.navigateTo(routeName: Routes.verifyOtpViewRoute);
                       }
                     },
                     buttonText: 'sign_in.send_code'.tr(context)),
-                SizedBox(height: 200.h,),
+                SizedBox(
+                  height: 200.h,
+                ),
                 AgreeToTermsText()
               ],
-
             ),
           ),
         ),
